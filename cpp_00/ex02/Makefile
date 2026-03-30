@@ -1,7 +1,7 @@
-NAME=phonebook
+NAME=program
 CXX=c++
 CXXFLAGS=-Wall -Wextra -Werror -std=c++98
-SRCS=Phone.cpp PhoneBook.cpp main.cpp
+SRCS=Account.cpp tests.cpp
 OBJS=$(SRCS:.cpp=.o)
 RM=rm -f
 
