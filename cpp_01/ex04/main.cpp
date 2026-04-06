@@ -19,7 +19,7 @@ int main(int argc, char const *argv[])
     char to_replace_char = to_replace[0];
     char replace_with_char = replace_with[0];
 
-    std::ifstream f(filename);
+    std::ifstream f(filename.c_str());
 
     if(!f.is_open())
     {
@@ -28,7 +28,7 @@ int main(int argc, char const *argv[])
     }
 
     std::string output_filename = filename + ".replace";
-    std::ofstream out(output_filename);
+    std::ofstream out(output_filename.c_str());
     if(!out.is_open())
     {
         std::cout << "Error: Could not create output file " << output_filename << std::endl;
