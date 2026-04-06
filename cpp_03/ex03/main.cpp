@@ -1,12 +1,12 @@
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(void)
 {
     std::cout << "---Start-Define---" << std::endl;
-    FragTrap a;
-    FragTrap b("Ahmet");
-    FragTrap c = FragTrap("Hasan");
-    FragTrap d = b;
+    DiamondTrap a;
+    DiamondTrap b("Ahmet");
+    DiamondTrap c = DiamondTrap("Hasan");
+    DiamondTrap d = b;
     std::cout << "---Test Area---" << std::endl;
     a.attack("dummy");
     c.attack("target");
@@ -23,10 +23,12 @@ int main(void)
         b.attack("spam");
     std::cout << "---Spam End---" << std::endl;
     d.attack("test copy");
+    a.whoAmI();
     a.highFivesGuys();
     a.takeDamage(100);
     a.attack("ghost");
     a.highFivesGuys();
+    a.whoAmI();
 
     return 0;
 }
