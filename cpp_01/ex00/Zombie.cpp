@@ -1,23 +1,22 @@
 #include "Zombie.hpp"
 
-Zombie::Zombie()
+
+Zombie::Zombie(): name("unnamed Zombie")
 {
-    this->name = "default";
-    std::cout << "Zombie " << this->name << " is created." << std::endl;
+    std::cout << "Zombie " << this->name << " wake up." << std::endl;
 }
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie(std::string name): name(name)
 {
-    this->name = name;
-    std::cout << "Zombie " << this->name << " is created." << std::endl;
+    std::cout << "Zombie " << this->name << " wake up." << std::endl;
 }
 
 Zombie::~Zombie()
 {
-    std::cout << "Zombie " << this->name << " is destroyed." << std::endl;
+    std::cout << "Zombie " << this->name << " went back to sleep." << std::endl;
 }
 
-void Zombie::announce(void)
+void Zombie::announce()
 {
     std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

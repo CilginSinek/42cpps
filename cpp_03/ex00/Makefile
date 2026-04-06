@@ -1,10 +1,7 @@
-NAME=program
+NAME=a.out
 CXX=c++
 CXXFLAGS=-Wall -Wextra -Werror -std=c++98
-SRCS=HumanA.cpp \
-HumanB.cpp \
-Weapon.cpp \
-main.cpp
+SRCS=main.cpp ClapTrap.cpp
 OBJS=$(SRCS:.cpp=.o)
 RM=rm -f
 
