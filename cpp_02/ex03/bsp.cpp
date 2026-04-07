@@ -11,11 +11,11 @@ static Fixed crossProduct(const Point p1, const Point p2, const Point p3)
 //* CA * CP
 bool bsp(const Point a, const Point b, const Point c, const Point point)
 {
-    if(a.getXcord() == b.getXcord() && a.getYcord() == b.getYcord())
+    if (a.getXcord() == b.getXcord() && a.getYcord() == b.getYcord())
         return (false);
-    if(b.getXcord() == c.getXcord() && b.getYcord() == c.getYcord())
+    if (b.getXcord() == c.getXcord() && b.getYcord() == c.getYcord())
         return (false);
-    if(c.getXcord() == a.getXcord() && c.getYcord() == a.getYcord())
+    if (c.getXcord() == a.getXcord() && c.getYcord() == a.getYcord())
         return (false);
     if (crossProduct(a, b, c) == Fixed(0))
         return false;

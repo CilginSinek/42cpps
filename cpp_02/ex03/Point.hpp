@@ -4,19 +4,19 @@
 
 class Point
 {
-    private:
-        Fixed x;
-        Fixed y;
+private:
+    Fixed x;
+    Fixed y;
 
-    public:
-        Point();
-        Point(const Fixed &x, const Fixed &y);
-        Point(const Point &other);
-        Point &operator=(const Point &other);
-        ~Point();
+public:
+    Point();
+    Point(const Fixed &x, const Fixed &y);
+    Point(const Point &other);
+    Point &operator=(const Point &other);
+    ~Point();
 
-        const Fixed &getXcord() const;
-        const Fixed &getYcord() const;
+    const Fixed &getXcord() const;
+    const Fixed &getYcord() const;
 };
 
 bool bsp(const Point a, const Point b, const Point c, const Point point);

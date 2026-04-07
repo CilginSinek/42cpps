@@ -1,6 +1,7 @@
 #include "Point.hpp"
 
-int main( void ) {
+int main(void)
+{
 
     Point a(0, 0);
     Point b(10, 0);
@@ -25,9 +26,9 @@ int main( void ) {
     bool onVertCRes = bsp(a, b, c, onVertexC);
 
     // === Edge Case: Points on Edges ===
-    Point onEdgeAB(5, 0);    // On AB
-    Point onEdgeBC(5, 5);    // On BC
-    Point onEdgeCA(0, 5);    // On CA
+    Point onEdgeAB(5, 0); // On AB
+    Point onEdgeBC(5, 5); // On BC
+    Point onEdgeCA(0, 5); // On CA
 
     bool onEdgeABRes = bsp(a, b, c, onEdgeAB);
     bool onEdgeBCRes = bsp(a, b, c, onEdgeBC);
