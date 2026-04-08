@@ -38,7 +38,7 @@ int main(void)
     Point centroid(10.0f / 3.0f, 10.0f / 3.0f);
     bool centroidRes = bsp(a, b, c, centroid);
 
-    // === Edge Case: Very Close to Edge ===
+    // === Edge Case: Very Close to Edge (on edge) ===
     Point nearEdge(4.9f, 5.1f);
     bool nearEdgeRes = bsp(a, b, c, nearEdge);
 

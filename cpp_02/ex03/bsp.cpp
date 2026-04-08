@@ -25,8 +25,8 @@ bool bsp(const Point a, const Point b, const Point c, const Point point)
 
     bool has_neg, has_pos;
 
-    has_neg = (cross1 < Fixed(0)) || (cross2 < Fixed(0)) || (cross3 < Fixed(0));
-    has_pos = (cross1 > Fixed(0)) || (cross2 > Fixed(0)) || (cross3 > Fixed(0));
+    has_neg = (cross1 <= Fixed(0)) || (cross2 <= Fixed(0)) || (cross3 <= Fixed(0));
+    has_pos = (cross1 >= Fixed(0)) || (cross2 >= Fixed(0)) || (cross3 >= Fixed(0));
 
     return !(has_neg && has_pos);
 }
