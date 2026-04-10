@@ -285,11 +285,11 @@ make fclean
 
 | Modül | Ana Konular | Durum |
 |-------|-----------|--------|
-| **cpp_04** | Virtual functions, polymorphism, abstract classes | ⭐ **MANDATORY** |
 | **cpp_00** | Class basics, namespaces, I/O streams | 🎁 Bonus |
 | **cpp_01** | Memory (new/delete), pointers, references, function pointers | 🎁 Bonus |
 | **cpp_02** | Operator overloading, OCF (canonical form) | 🎁 Bonus |
 | **cpp_03** | Inheritance (single ve multiple), virtual inheritance | 🎁 Bonus |
+| **cpp_04** | Virtual functions, polymorphism, abstract classes | ⭐ **MANDATORY** |
 
 ---
 
