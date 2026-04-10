@@ -5,11 +5,11 @@ Bu repository 42 okulunun C++ piscine (yoğun kursu) projelerini içermektedir. 
 ## 📋 İçindekiler
 
 - [Proje Yapısı](#proje-yapısı)
-- ⭐ [cpp_04: Subtype polymorphism, virtual functions, abstract classes (MANDATORY)](#cpp_04-subtype-polymorphism-virtual-functions-abstract-classes-mandatory)
-- [cpp_00: Namespace, class, member functions, stdio stream (BONUS)](#cpp_00-namespace-class-member-functions-stdio-stream-bonus)
-- [cpp_01: Memory allocation, references, pointers to members (BONUS)](#cpp_01-memory-allocation-references-pointers-to-members-bonus)
-- [cpp_02: Ad-hoc polymorphism, operator overloading, orthodox canonical class form (BONUS)](#cpp_02-ad-hoc-polymorphism-operator-overloading-orthodox-canonical-class-form-bonus)
-- [cpp_03: Inheritance (BONUS)](#cpp_03-inheritance-bonus)
+- [cpp_00: Namespace, class, member functions, stdio stream (BONUS)](#-cpp_00-namespace-class-member-functions-stdio-stream-bonus)
+- [cpp_01: Memory allocation, references, pointers to members (BONUS)](#-cpp_01-memory-allocation-references-pointers-to-members-bonus)
+- [cpp_02: Ad-hoc polymorphism, operator overloading, orthodox canonical class form (BONUS)](#-cpp_02-ad-hoc-polymorphism-operator-overloading-orthodox-canonical-class-form-bonus)
+- [cpp_03: Inheritance (BONUS)](#-cpp_03-inheritance-bonus)
+- [cpp_04: Subtype polymorphism, virtual functions, abstract classes (MANDATORY)](#-cpp_04-subtype-polymorphism-virtual-functions-abstract-classes-mandatory)
 
 ---
 
@@ -48,41 +48,6 @@ Bu repository 42 okulunun C++ piscine (yoğun kursu) projelerini içermektedir. 
 ---
 
 ## 🎯 Modüllerin Detaylı Açıklaması
-
----
-
-### ⭐ cpp_04: Subtype polymorphism, virtual functions, abstract classes [MANDATORY]
-
-**Amaç**: Virtual functions, polymorphism ve abstract classes öğrenmek.
-
-#### **ex00: Virtual Functions - Animal, Cat, Dog**
-- **Konu**: Virtual functions, method overriding
-- **Dosyalar**: `Animal.hpp`, `Animal.cpp`, `Cat.hpp`, `Cat.cpp`, `Dog.hpp`, `Dog.cpp` + WrongAnimal versiyonları
-- **Sınıflar**:
-  - `Animal` - Base class, `makeSound()` virtual
-  - `Cat` - "Meow" sesleri, `makeSound()` override
-  - `Dog` - "Woof" sesleri, `makeSound()` override
-  - `WrongAnimal`, `WrongCat`, `WrongDog` - Virtual olmayan versiyonu (karşılaştırma için)
-- **Konsept**: Virtual olmayan vs virtual method davranışları
-
-#### **ex01: Deep Copy - Brain allocation**
-- **Konu**: Deep copy, pointer member variables, constructor initialization
-- **Dosyalar**: `Animal.hpp`, `Cat.hpp`, `Dog.hpp`, `Brain.hpp`, `Brain.cpp` + implementations
-- **Sınıf**: `Brain` - 100 adet str fikri saklayan sınıf
-- **Özellikler**:
-  - `Cat` ve `Dog` her biri dinamik Brain pointer'ı tutar
-  - Deep copy constructor ve assignment operator
-  - Memory leak olmadığından emin olmak için test etme
-- **Array Test**: 100 animal'ın array'ini oluştur
-
-#### **ex02: Pure Virtual Functions - Abstract Animal**
-- **Konu**: Abstract classes, pure virtual functions
-- **Dosyalar**: Benzer yapı, `Animal` pure virtual yap
-- **Değişiklikler**:
-  - `Animal` sınıfında `makeSound()` pure virtual
-  - `Animal` artık instantiate edilemez
-  - `Cat` ve `Dog` tamamlanmış implementasyon gerektirir
-- **Konsept**: Arayüz tasarımı, abstract base class pattern
 
 ---
 
@@ -255,6 +220,41 @@ Bu repository 42 okulunun C++ piscine (yoğun kursu) projelerini içermektedir. 
   - Virtual inheritance (ambiguity'yi çözmek için)
   - `whoAmI()` - isim bilgiserini yazdır
   - Tüm parent metodlarını access edebilme
+
+---
+
+### ⭐ cpp_04: Subtype polymorphism, virtual functions, abstract classes [MANDATORY]
+
+**Amaç**: Virtual functions, polymorphism ve abstract classes öğrenmek.
+
+#### **ex00: Virtual Functions - Animal, Cat, Dog**
+- **Konu**: Virtual functions, method overriding
+- **Dosyalar**: `Animal.hpp`, `Animal.cpp`, `Cat.hpp`, `Cat.cpp`, `Dog.hpp`, `Dog.cpp` + WrongAnimal versiyonları
+- **Sınıflar**:
+  - `Animal` - Base class, `makeSound()` virtual
+  - `Cat` - "Meow" sesleri, `makeSound()` override
+  - `Dog` - "Woof" sesleri, `makeSound()` override
+  - `WrongAnimal`, `WrongCat`, `WrongDog` - Virtual olmayan versiyonu (karşılaştırma için)
+- **Konsept**: Virtual olmayan vs virtual method davranışları
+
+#### **ex01: Deep Copy - Brain allocation**
+- **Konu**: Deep copy, pointer member variables, constructor initialization
+- **Dosyalar**: `Animal.hpp`, `Cat.hpp`, `Dog.hpp`, `Brain.hpp`, `Brain.cpp` + implementations
+- **Sınıf**: `Brain` - 100 adet str fikri saklayan sınıf
+- **Özellikler**:
+  - `Cat` ve `Dog` her biri dinamik Brain pointer'ı tutar
+  - Deep copy constructor ve assignment operator
+  - Memory leak olmadığından emin olmak için test etme
+- **Array Test**: 100 animal'ın array'ini oluştur
+
+#### **ex02: Pure Virtual Functions - Abstract Animal**
+- **Konu**: Abstract classes, pure virtual functions
+- **Dosyalar**: Benzer yapı, `Animal` pure virtual yap
+- **Değişiklikler**:
+  - `Animal` sınıfında `makeSound()` pure virtual
+  - `Animal` artık instantiate edilemez
+  - `Cat` ve `Dog` tamamlanmış implementasyon gerektirir
+- **Konsept**: Arayüz tasarımı, abstract base class pattern
 
 ---
 
