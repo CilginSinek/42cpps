@@ -4,7 +4,7 @@ Bu repository 42 okulunun C++ piscine (yoğun kursu) projelerini içermektedir. 
 
 ## 📋 İçindekiler
 
-- [Proje Yapısı](#proje-yapısı)
+- [Proje Yapısı](#%EF%B8%8F-proje-yapısı)
 - [cpp_00: Namespace, class, member functions, stdio stream (BONUS)](#-cpp_00-namespace-class-member-functions-stdio-stream-bonus)
 - [cpp_01: Memory allocation, references, pointers to members (BONUS)](#-cpp_01-memory-allocation-references-pointers-to-members-bonus)
 - [cpp_02: Ad-hoc polymorphism, operator overloading, orthodox canonical class form (BONUS)](#-cpp_02-ad-hoc-polymorphism-operator-overloading-orthodox-canonical-class-form-bonus)
