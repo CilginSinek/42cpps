@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <cerrno>
 #include <cctype>
+#include <cmath>
 
 ScalarConverter::ScalarConverter()
 {
@@ -25,11 +26,11 @@ ScalarConverter::~ScalarConverter()
 static void printChar(const double &value)
 {
 	std::cout << "char: ";
-	if(std::isnan(value) || std::isinf(value) || value < 0 || value > 127)
+	if (std::isnan(value) || std::isinf(value) || value < 0 || value > 127)
 	{
 		std::cout << "impossible" << std::endl;
 	}
-	else if(std::isprint(static_cast<char>(value)))
+	else if (std::isprint(static_cast<char>(value)))
 	{
 		std::cout << "'" << static_cast<char>(value) << "'" << std::endl;
 	}
@@ -42,7 +43,7 @@ static void printChar(const double &value)
 static void printInt(const double &value)
 {
 	std::cout << "int: ";
-	if(std::isnan(value) || std::isinf(value) || value < std::numeric_limits<int>::min() || value > std::numeric_limits<int>::max())
+	if (std::isnan(value) || std::isinf(value) || value < std::numeric_limits<int>::min() || value > std::numeric_limits<int>::max())
 	{
 		std::cout << "impossible" << std::endl;
 	}
@@ -55,38 +56,44 @@ static void printInt(const double &value)
 static void printFloat(const double &value)
 {
 	std::cout << "float: ";
-	if(std::isnan(value))
+	if (std::isnan(value))
 	{
 		std::cout << "nanf" << std::endl;
 	}
-	else if(std::isinf(value))
+	else if (std::isinf(value))
 	{
 		std::cout << (value > 0 ? "+inff" : "-inff") << std::endl;
 	}
-	else if(value < -std::numeric_limits<float>::max() || value > std::numeric_limits<float>::max())
+	else if (value < -std::numeric_limits<float>::max() || value > std::numeric_limits<float>::max())
 	{
 		std::cout << "impossible" << std::endl;
 	}
 	else
 	{
-		std::cout << static_cast<float>(value) << "f" << std::endl;
+		std::cout << static_cast<float>(value);
+		if (trunc(value) == value)
+			std::cout << ".0";
+		std::cout << "f" << std::endl;
 	}
 }
 
 static void printDouble(const double &value)
 {
 	std::cout << "double: ";
-	if(std::isnan(value))
+	if (std::isnan(value))
 	{
 		std::cout << "nan" << std::endl;
 	}
-	else if(std::isinf(value))
+	else if (std::isinf(value))
 	{
 		std::cout << (value > 0 ? "+inf" : "-inf") << std::endl;
 	}
 	else
 	{
-		std::cout << value << std::endl;
+		std::cout << value;
+		if (trunc(value) == value)
+			std::cout << ".0";
+		std::cout << std::endl;
 	}
 }
 
@@ -115,7 +122,7 @@ static bool parseLiteral(const std::string &literal, double &value)
 
 void ScalarConverter::convert(const std::string &literal)
 {
-	if(literal.empty())
+	if (literal.empty())
 	{
 		std::cerr << "Error: Empty literal" << std::endl;
 		return;
