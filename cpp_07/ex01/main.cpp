@@ -5,17 +5,14 @@ void print(const int &i)
 	std::cout << i << std::endl;
 }
 
-void multiplyByTwo(int &i)
+void multiplyByTwoP(const int &i)
 {
-	i *= 2;
+	std::cout << i*2 << std::endl;
 }
 
-void isModThree(int &i)
+void isModThree(const int &i)
 {
-	if (i % 3 == 0)
-		i = 1;
-	else
-		i = 0;
+	std::cout << i << " is mod three: " << (i % 3 == 0) << std::endl;
 }
 
 int main(void)
@@ -23,10 +20,12 @@ int main(void)
 	int array[] = {1, 2, 3, 4, 5};
 	::iter(array, 5, print);
 	std::cout << "---------------------" << std::endl;
-	::iter(array, 5, multiplyByTwo);
+	::iter(array, 5, multiplyByTwoP);	
+	std::cout << "---------------------" << std::endl;
 	::iter(array, 5, print);
 	std::cout << "---------------------" << std::endl;
 	::iter(array, 5, isModThree);
+	std::cout << "---------------------" << std::endl;
 	::iter(array, 5, print);
 	std::cout << "----------const------" << std::endl;
 	int const array2[] = {1, 2, 3, 4, 5};
