@@ -26,14 +26,14 @@ int main()
 	}
 	std::cout << "--------Stack test----------" << std::endl;
 	std::stack<int> s;
-	s.push(50);
-	s.push(170);
+	s.push(5);
+	s.push(17);
 	std::cout << "top: " << s.top() << std::endl;
 	s.pop();
 	std::cout << "size: " << s.size() << std::endl;
-	s.push(30);
-	s.push(50);
-	s.push(7370);
+	s.push(3);
+	s.push(5);
+	s.push(737);
 	//[...]
 	s.push(0);
 	while(!s.empty())
