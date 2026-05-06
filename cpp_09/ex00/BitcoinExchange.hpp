@@ -14,6 +14,7 @@ public:
 
 	void loadDatabase(const std::string &filename);
 	void processInput(const std::string &filename);
+
 private:
 	std::map<std::string, double> data;
 	std::map<std::string, double> database;
