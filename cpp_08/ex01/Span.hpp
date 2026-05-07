@@ -27,7 +27,7 @@ public:
 	{
 		while (begin != end)
 		{
-			addNumber(*begin);
+			this->addNumber(*begin);
 			++begin;
 		}
 	}
