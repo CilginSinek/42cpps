@@ -15,17 +15,12 @@ int main(int argc, char const *argv[])
 	{
 		try
 		{
-			int value = std::stoi(argv[i]);
+			int value = PmergeMe::ft_stoi(argv[i]);
 			pmergeMe.insert(value);
 		}
-		catch (const std::invalid_argument &e)
+		catch (...)
 		{
-			std::cerr << "Invalid argument: " << argv[i] << " is not a valid integer." << std::endl;
-			return 1;
-		}
-		catch (const std::out_of_range &e)
-		{
-			std::cerr << "Out of range: " << argv[i] << " is too large to fit in an int." << std::endl;
+			std::cerr << "Error" << std::endl;
 			return 1;
 		}
 	}

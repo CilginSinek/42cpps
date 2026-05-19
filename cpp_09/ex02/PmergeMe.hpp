@@ -18,10 +18,11 @@ public:
 	PmergeMe &operator=(const PmergeMe &other);
 	~PmergeMe();
 
+	static int ft_stoi(const std::string &str);
 	void insert(int value);
 	void displayCase();
-	void sortVector();
-	void sortDeque();
+	std::vector<int> sortVector(std::vector<int> vec);
+	std::deque<int> sortDeque(std::deque<int> vec);
 };
 
 
