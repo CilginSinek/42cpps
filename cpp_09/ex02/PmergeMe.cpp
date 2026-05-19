@@ -109,7 +109,7 @@ static size_t jacobsthal(size_t n) {
 static void JacopsthalVectorBinarySort(std::vector<int> &main, std::vector<int> &pend)
 {
     size_t prev = 0;
-    size_t n = 2;
+    size_t n = 3;
 
     while (prev < pend.size())
     {
@@ -206,7 +206,7 @@ std::vector<int> PmergeMe::sortVector(std::vector<int> vec)
 static void JacopsthalDequeBinarySort(std::deque<int> &main, std::deque<int> &pend)
 {
     size_t prev = 0;
-    size_t n = 2;
+    size_t n = 3;
 
     while (prev < pend.size())
     {
