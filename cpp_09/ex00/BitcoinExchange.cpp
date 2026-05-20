@@ -32,7 +32,7 @@ static int ft_atoi(const std::string &str)
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-			sign = -1;
+			throw std::runtime_error("not a positive number.");
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
@@ -68,6 +68,8 @@ static bool validateValue(const std::string &value)
 {
 	int i = 0;
 	int dotCount = 0;
+	if (value[i] == '-')
+		throw std::runtime_error("Error: not a positive number.");
 	while (std::isdigit(value[i]) || value[i] == '.')
 	{
 		if (value[i] == '.')
@@ -103,7 +105,7 @@ void BitcoinExchange::loadDatabase(const std::string &filename)
 	std::ifstream file(filename.c_str());
 	if (!file.is_open())
 	{
-		throw std::runtime_error("Error: Could not open file " + filename);
+		throw std::runtime_error("Error: could not open file.");
 	}
 	int i = 0;
 	std::string line;
@@ -141,7 +143,7 @@ void BitcoinExchange::processInput(const std::string &filename)
 	std::ifstream file(filename.c_str());
 	if (!file.is_open())
 	{
-		throw std::runtime_error("Error: Could not open file " + filename);
+		throw std::runtime_error("Error: could not open file.");
 	}
 	int i = 0;
 	std::string line;
@@ -151,7 +153,7 @@ void BitcoinExchange::processInput(const std::string &filename)
 			continue;
 		if (line.find('|') == std::string::npos)
 		{
-			std::cerr << "Error: Invalid input => " << line << std::endl;
+			std::cerr << "Error: bad input => " << line << std::endl;
 			continue;
 		}
 		std::string mydata[2];
@@ -159,7 +161,7 @@ void BitcoinExchange::processInput(const std::string &filename)
 		mydata[1] = line.substr(line.find('|') + 1);
 		if (mydata[0].empty() || mydata[1].empty())
 		{
-			std::cerr << "Error: Invalid input => " << line << std::endl;
+			std::cerr << "Error: bad input => " << line << std::endl;
 			continue;
 		}
 		if (i == 0 && (mydata[0] != "date " || mydata[1] != " value"))
@@ -206,12 +208,12 @@ void BitcoinExchange::processInput(const std::string &filename)
 				ft_atof(mydata[1], value);
 				if (mydata[1][0] == '-')
 					throw std::runtime_error("Error: not a positive number.");
-				if (mydata[1].substr(0, mydata[1].find('.')).length() > 10 || (value == 0 && mydata[1] != "0" && mydata[1] != "0.0"))
-					throw std::runtime_error("Error: Value too large.");
+				if (mydata[1].substr(0, mydata[1].find('.')).length() >= 10 || (value == 0 && mydata[1] != "0" && mydata[1] != "0.0"))
+					throw std::runtime_error("Error: too large a number.");
 				if (value < 0)
 					throw std::runtime_error("Error: not a positive number.");
 				if (value > 1000)
-					throw std::runtime_error("Error: Value too large.");
+					throw std::runtime_error("Error: too large a number.");
 				if (value == 0 && mydata[1] != "0" && mydata[1] != "0.0")
 					throw std::runtime_error("Error: Invalid number format" + mydata[1]);
 			}
@@ -234,12 +236,12 @@ void BitcoinExchange::processInput(const std::string &filename)
 				valueInt = ft_atoi(mydata[1]);
 				if (mydata[1][0] == '-')
 					throw std::runtime_error("Error: not a positive number.");
-				if (mydata[1].length() > 10 || (valueInt == 0 && mydata[1] != "0"))
-					throw std::runtime_error("Error: Value too large.");
+				if (mydata[1].length() >= 10 || (valueInt == 0 && mydata[1] != "0"))
+					throw std::runtime_error("Error: too large a number.");
 				if (valueInt < 0)
 					throw std::runtime_error("Error: not a positive number.");
 				if (valueInt > 1000)
-					throw std::runtime_error("Error: Value too large.");
+					throw std::runtime_error("Error: too large a number.");
 			}
 			catch (const std::exception &e)
 			{
